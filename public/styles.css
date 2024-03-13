@@ -62,3 +62,33 @@ li {
   border-radius: 20px;
   font-weight: normal;
 }
+
+#enlace {
+  display: none;
+}
+
+#enlace:target {
+  display: block;
+}
+
+.containerProfile {
+  background: rgb(182, 170, 228);
+  width: 500px;
+  border-radius: 20px;
+  margin: 100px auto auto auto;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 100px 0;
+}
+
+.enlace {
+  background-color: aliceblue;
+  width: 500px;
+  padding: 3px;
+  border-radius: 10px;
+  border: 2px solid pink;
+  margin: auto;
+}
