@@ -92,3 +92,8 @@ li {
   border: 2px solid pink;
   margin: auto;
 }
+
+.containerMapa{
+  margin: 100px;
+  padding: 100px;
+}
