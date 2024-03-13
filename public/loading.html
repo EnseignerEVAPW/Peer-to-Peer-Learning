@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Peer to Peer Learning</title>
+    <style>
+        /* Estilos para la pantalla de carga */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Alineación vertical */
+            z-index: 9999;
+        }
+
+        .loading-text {
+            color: #ffffff;
+            font-size: 24px;
+            margin-bottom: 20px; /* Espacio debajo del texto */
+        }
+
+        .cancel-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #b43434;
+            font-size: 30px;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .tip {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: #333333;
+            color: #ffffff;
+            border-radius: 5px;
+        }
+
+        .tip-text{
+            padding-top: 73px;
+            font-size: 16px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Pantalla de carga -->
+    <div class="loading-screen">
+        <p class="loading-text">Buscando emparejamiento...</p>
+        <button class="cancel-button" onclick="cancelSearch()">Cancelar</button>
+
+        <p class="tip-text">Tip: Upsolvea al menos 1 problema de cada contest</p>
+    </div>
+
+    <!-- Contenido principal -->
+    <h1>Peer to Peer Learning</h1>
+    <nav>
+        <ul>
+            <li><a href="#interact">Interactuar</a></li>
+            <li><a href="#reglas">Reglas</a></li>
+            <li><a href="#perfil" target="_blank">Ver Perfil</a></li>
+        </ul>
+    </nav>
+    <section id="interact">
+        <div class="containerButtons">
+            <a class="button" href="">Versus</a>
+            <a class="button" href="">ICPC</a>
+        </div>
+    </section>
+    <section id="reglas">
+        <div class="containerReglas">
+            <p><strong>Desafíos de Programación:</strong> Los participantes deben resolver problemas de programación utilizando el lenguaje de programación seleccionado.<br>
+
+            <strong> Puntuación por Desafío: </strong>Cada desafío tiene un puntaje asociado que indica su dificultad. Los participantes ganan puntos al resolver los desafíos correctamente.<br>
+                
+            <strong>Restricciones de Tiempo: </strong>Por lo general, hay un límite de tiempo para resolver cada desafío. Los participantes deben completar la solución dentro de este tiempo para obtener puntos completos.<br>
+                
+            <strong> Soluciones Eficientes: </strong>Además de producir una solución correcta, se valora la eficiencia del código. Soluciones más eficientes pueden recibir bonificaciones de puntos.<br>
+                
+            <strong> Colaboración Limitada: </strong>En competiciones individuales, se espera que los participantes trabajen de forma independiente sin colaboración externa.<br>
+                
+            <strong>Sobre el plagio: </strong>Cualquier intento de plagio de soluciones, puede resultar en la descalificación del participante.</p>
+        </div>
+    </section>
+    <section id="perfil">
+
+    </section>
+
+    <!-- Tip -->
+    <div class="tip">
+        <p>Tip: ¡Recuerda colaborar y compartir conocimientos!</p>
+    </div>
+
+    <script>
+        function cancelSearch() {
+            alert('Sigan Viendo');
+        }
+    </script>
+</body>
+</html>
