@@ -97,3 +97,13 @@ li {
   margin: 100px;
   padding: 100px;
 }
+.CodeMirror {
+  float: left;
+  width: 50%;
+  height: 500px;
+}
+#language-selector {
+  margin-top: -20px;
+  position: absolute;
+  z-index: 10;
+}

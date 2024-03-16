@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/theme/base16-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/clike/clike.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+     
+<h1>Pilot - Copilot</h1>
+
+<select id="language-selector">
+    <option value="javascript">JavaScript</option>
+    <option value="python">Python</option>
+    <option value="text/x-csrc">C</option>
+    <option value="text/x-c++src">C++</option>
+    <option value="text/x-csharp">C#</option>
+</select>
+
+<textarea id="editor"></textarea>
+
+<script>
+    var editor = CodeMirror.fromTextArea(document.getElementById('editor'), {
+        lineNumbers: true,
+        mode: "javascript",
+        theme: "base16-dark"
+    });
+    editor.getWrapperElement().style.width = '50%';
+    editor.getWrapperElement().style.margin = '0 auto';
+    editor.refresh();
+    document.getElementById('language-selector').addEventListener('change', function() {
+        editor.setOption("mode", this.value);
+    });
+</script>
+
+</body>
+</html>
