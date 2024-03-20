@@ -14,8 +14,52 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
-</head>
+    <style>
+        #editor-container {
+            width: 100%; 
+            margin-right: 0px; 
+            
+        }
 
+        /* Estilos para la oración */
+        #hints-container {
+            display: flex;
+        }
+
+        .hint{
+            border: 1px solid black;
+            padding: 10px; 
+            margin-right: 10px; 
+            border-radius: 13px;
+            font-size: 20px;
+            color: white;
+            border-color: #a81039;
+            border-width: 3px;
+            background-color: #D9436B;
+        }
+
+        #getHint-button{
+            margin-right: 15px;
+            border-radius: 5px;
+            background-color: #56bca9;
+            border-radius: 13px;
+            font-size: 22px;
+        }
+        .timer-hint{
+            margin-top: 15px;
+            margin-left: 5px;
+            font-size: 20px;
+            color: white;
+        }
+        #tags{
+            position: absolute;
+            bottom: 7%;
+            left: 55%;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
 <body>
 
   <h1>Pilot - Copilot</h1>
@@ -46,6 +90,17 @@
         
       </div>
       <div class="row">
+        <div id="tags">
+            <div id="hints-container">
+            <button id="getHint-button">Get Hint</button>
+            <div class="hint">2200</div>
+            <div class="hint">Segment Tree</div>
+            <div class="hint">Strings</div>
+          </div>
+          <div class="timer-hint">Next Hint available in 13 seconds</div>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-2">
           <a href=""><img src="./assets/imgs/happy.png" alt="happy-face"></a>
         </div>
@@ -73,8 +128,10 @@
     editor.getWrapperElement().style.width = '90%';
     editor.getWrapperElement().style.margin = '0 auto';
     editor.refresh();
-    document.getElementById('language-selector').addEventListener('change', function () {
-      editor.setOption("mode", this.value);
+
+    document.getElementById('language-selector').addEventListener('change', function() {
+        editor.setOption("mode", this.value);
+
     });
     var dMain = new Date();
     setInterval(setInterval(myTimer, 1000));
