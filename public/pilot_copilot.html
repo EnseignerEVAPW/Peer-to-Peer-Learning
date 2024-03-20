@@ -11,31 +11,75 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/python/python.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/clike/clike.min.js"></script>
     <link rel="stylesheet" href="styles.css">
-</head>
+    <style>
+        /* Estilos para el editor de texto */
+        #editor-container {
+            float: left; /* Para colocar a la izquierda */
+            width: 100%; /* Ancho del editor */
+            margin-right: 20px; /* Espacio entre el editor y la oración */
+        }
 
+        /* Estilos para la oración */
+        #hints-container {
+            float: right; /* Para colocar a la derecha */
+            width: calc(50% - 20px); /* Ancho de la oración */
+            display: flex;
+        }
+
+        .hint{
+            border: 1px solid black; /* Borde negro */
+            padding: 10px; /* Espaciado interno */
+            margin-right: 10px; /* Margen derecho entre los rectángulos */
+            border-radius: 13px;
+            font-size: 20px;
+            color: white;
+            border-color: #a81039;
+            border-width: 3px;
+            background-color: #D9436B;
+        }
+
+        #getHint-button{
+            margin-right: 15px;
+            border-radius: 5px;
+            background-color: #56bca9;
+            border-radius: 13px;
+            font-size: 22px;
+        }
+    </style>
+</head>
 <body>
-     
+
 <h1>Pilot - Copilot</h1>
 
-<select id="language-selector">
-    <option value="javascript">JavaScript</option>
-    <option value="python">Python</option>
-    <option value="text/x-csrc">C</option>
-    <option value="text/x-c++src">C++</option>
-    <option value="text/x-csharp">C#</option>
-</select>
+<!-- Contenedor del editor de texto -->
+<div id="editor-container">
+    <select id="language-selector">
+        <option value="javascript">JavaScript</option>
+        <option value="python">Python</option>
+        <option value="text/x-csrc">C</option>
+        <option value="text/x-c++src">C++</option>
+        <option value="text/x-csharp">C#</option>
+    </select>
+    <textarea id="editor"></textarea>
+</div>
 
-<textarea id="editor"></textarea>
-
+<!-- Contenedor de la oración -->
+<div>
+    <div id="hints-container">
+        <button id="getHint-button">Get Hint</button>
+        <div class="hint">2200</div>
+        <div class="hint">Segment Tree</div>
+        <div class="hint">Strings</div>
+    </div>
+    <p>Next hint available in 13</p>
+</div>
 <script>
     var editor = CodeMirror.fromTextArea(document.getElementById('editor'), {
         lineNumbers: true,
         mode: "javascript",
         theme: "base16-dark"
     });
-    editor.getWrapperElement().style.width = '50%';
-    editor.getWrapperElement().style.margin = '0 auto';
-    editor.refresh();
+
     document.getElementById('language-selector').addEventListener('change', function() {
         editor.setOption("mode", this.value);
     });
