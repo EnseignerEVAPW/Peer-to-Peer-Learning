@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Original+Surfer&family=Spinnaker&family=Unbounded:wght@200..900&display=swap');
 
 body {
   font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
   background-color: #171D40;
 }
 
@@ -10,8 +9,44 @@ h1 {
   color: #D9436B;
   text-align: center;
   font-weight: normal;
-  font-size: 3.5rem;
+  font-size: 5rem;
+  font-family: 'Unbounded', sans-serif;
 }
+
+nav {
+  background-color: rgb(225, 223, 241);
+  border-radius: 12px 0 12px 0;
+  height: 50px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+}
+
+li {
+  margin-inline-end: 10vw;
+  display: flex;
+}
+
+li:hover {
+  background-color: #8e75c9;
+  border: 10px solid #8e75c9;
+}
+
+li>a {
+  text-decoration: none;
+  color: #171D40;
+}
+
+li>a:hover {
+  color: #d6d6d6;
+  font-size: 1.2rem;
+}
+
 
 .containerButtons {
   display: flex;
@@ -28,29 +63,13 @@ h1 {
   border-radius: 10px;
   border-color: aliceblue;
   font-size: 1.5rem;
+  text-decoration: none;
+  margin: 10px;
 }
 
 .button:hover {
   background: #5764d9;
   border-color: aliceblue;
-}
-
-nav {
-  background-color: rgb(225, 223, 241);
-  border-radius: 12px 0 12px 0;
-  height: 50px;
-  display: flex;
-  justify-content: space-around;
-}
-
-ul {
-  display: flex;
-  align-items: center;
-}
-
-li {
-  width: 300px;
-  text-decoration: none;
 }
 
 .containerReglas {
@@ -86,24 +105,65 @@ li {
 
 .enlace {
   background-color: aliceblue;
-  width: 500px;
+  width: 400px;
   padding: 3px;
   border-radius: 10px;
   border: 2px solid pink;
-  margin: auto;
 }
 
-.containerMapa{
-  margin: 100px;
-  padding: 100px;
+.containerMapa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
+
 .CodeMirror {
   float: left;
-  width: 50%;
+  width: 90%;
   height: 500px;
 }
+
 #language-selector {
   margin-top: -20px;
   position: absolute;
   z-index: 10;
+}
+
+@keyframes move {
+  25% {
+    transform: rotate(0.10turn);
+  }
+
+  50% {
+    transform: rotate(0.35turn);
+  }
+
+  75% {
+    transform: rotate(0.60turn);
+  }
+
+  100% {
+    transform: rotate(0.75turn);
+  }
+}
+
+.chronometer {
+  background-color: #d95786;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.part {
+  background-color: #8e75c9;
+  width: 50px;
+  height: 50px;
+  border-top-right-radius: 90px;
+  transform: translate(50px, 0px);
+
+}
+
+.grafic {
+  animation: move 30s 1 linear;
 }
