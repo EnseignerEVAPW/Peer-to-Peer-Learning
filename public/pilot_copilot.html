@@ -12,24 +12,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/clike/clike.min.js"></script>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Estilos para el editor de texto */
         #editor-container {
-            float: left; /* Para colocar a la izquierda */
-            width: 100%; /* Ancho del editor */
-            margin-right: 20px; /* Espacio entre el editor y la oración */
+            width: 100%; 
+            margin-right: 0px; 
+            
         }
 
         /* Estilos para la oración */
         #hints-container {
-            float: right; /* Para colocar a la derecha */
-            width: calc(50% - 20px); /* Ancho de la oración */
             display: flex;
         }
 
         .hint{
-            border: 1px solid black; /* Borde negro */
-            padding: 10px; /* Espaciado interno */
-            margin-right: 10px; /* Margen derecho entre los rectángulos */
+            border: 1px solid black;
+            padding: 10px; 
+            margin-right: 10px; 
             border-radius: 13px;
             font-size: 20px;
             color: white;
@@ -44,6 +41,19 @@
             background-color: #56bca9;
             border-radius: 13px;
             font-size: 22px;
+        }
+        .timer-hint{
+            margin-top: 15px;
+            margin-left: 5px;
+            font-size: 20px;
+            color: white;
+        }
+        #tags{
+            position: absolute;
+            bottom: 7%;
+            left: 55%;
+            display: flex;
+            flex-direction: column;
         }
     </style>
 </head>
@@ -64,14 +74,14 @@
 </div>
 
 <!-- Contenedor de la oración -->
-<div>
+<div id="tags">
     <div id="hints-container">
         <button id="getHint-button">Get Hint</button>
         <div class="hint">2200</div>
         <div class="hint">Segment Tree</div>
         <div class="hint">Strings</div>
     </div>
-    <p>Next hint available in 13</p>
+    <div class="timer-hint">Next Hint available in 13 seconds</div>
 </div>
 <script>
     var editor = CodeMirror.fromTextArea(document.getElementById('editor'), {
